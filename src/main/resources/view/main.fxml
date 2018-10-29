@@ -27,7 +27,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXComboBox fx:id="comboArea">
+                  <JFXComboBox fx:id="comboArea" onAction="#changeArea">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -49,12 +49,12 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="gg2" text="GG2">
+                  <JFXCheckBox fx:id="gg2" onAction="#update" text="GG2">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="gg3" text="GG3">
+                  <JFXCheckBox fx:id="gg3" onAction="#update" text="GG3">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -63,17 +63,17 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXCheckBox fx:id="sg1" text="SG1">
+                  <JFXCheckBox fx:id="sg1" onAction="#update" text="SG1">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="sg2" text="SG2">
+                  <JFXCheckBox fx:id="sg2" onAction="#update" text="SG2">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="sg3" text="SG3">
+                  <JFXCheckBox fx:id="sg3" onAction="#update" text="SG3">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
