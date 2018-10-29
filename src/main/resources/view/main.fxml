@@ -1,33 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
-   <top>
-      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Area de proceso" />
-            <JFXComboBox fx:id="comboArea" />
-            <Label text="Nivel actual" />
-            <JFXComboBox fx:id="comboAct" />
-            <Label text="Nivel objetivo" />
-            <JFXComboBox fx:id="comboObj" />
-            <JFXButton fx:id="btnAgregar" buttonType="RAISED" onAction="#agregar" text="Agregar" />
-         </children>
-      </HBox>
-   </top>
-   <center>
-      <JFXTextArea fx:id="txtTexto" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="226.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <bottom>
+      <JFXButton fx:id="btnProcess" buttonType="RAISED" onAction="#process" prefHeight="42.0" prefWidth="100.0" text="Procesar" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
-      </JFXTextArea>
-   </center>
+      </JFXButton>
+   </bottom>
+   <left>
+      <VBox prefHeight="164.0" prefWidth="708.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXComboBox fx:id="comboArea">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+                  <Label fx:id="txtArea" prefHeight="22.0" prefWidth="249.0" text="Label">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="379.0">
+               <children>
+                  <JFXCheckBox fx:id="gg1" disable="true" text="GG1">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="gg2" text="GG2">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="gg3" text="GG3">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXCheckBox fx:id="sg1" text="SG1">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="sg2" text="SG2">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="sg3" text="SG3">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>

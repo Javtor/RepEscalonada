@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -14,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 public class MainController implements Initializable {
 
@@ -23,93 +25,31 @@ public class MainController implements Initializable {
 	private HashMap<String, String> hash;
 	
 	@FXML
-	private JFXComboBox<String> comboArea;
+    private JFXButton btnProcess;
 
-	@FXML
-	private JFXComboBox<Integer> comboAct;
+    @FXML
+    private JFXComboBox<String> comboArea;
 
-	@FXML
-	private JFXComboBox<Integer> comboObj;
+    @FXML
+    private Label txtArea;
 
-	@FXML
-	private JFXButton btnAgregar;
+    @FXML
+    private JFXCheckBox gg1;
 
-	@FXML
-	private JFXTextArea txtTexto;
+    @FXML
+    private JFXCheckBox gg2;
 
-	@FXML
-	void agregar(ActionEvent event) {
-		String area = comboArea.getSelectionModel().getSelectedItem();
-		String msg = "Área de proceso: " + area + "\n";
+    @FXML
+    private JFXCheckBox gg3;
 
-		int inicio = comboAct.getSelectionModel().getSelectedIndex();
-		int fin = comboObj.getSelectionModel().getSelectedIndex();
+    @FXML
+    private JFXCheckBox sg1;
 
-		String[] metas = new String[3];
-		metas[0] = "Achieve Specific Goals";
-		metas[1] = "Institutionalize a Managed Process";
-		metas[2] = "Institutionalize a Defined Process";
+    @FXML
+    private JFXCheckBox sg2;
 
-		msg += "Para alcanzar el nivel de capacidad " + fin + ", se deben cumplir las siguientes metas: ";
-
-		for (int i = inicio; i < fin; i++) {
-			msg += "GG " + (i + 1) + ", ";
-		}
-
-		msg += "que consisten en";
-
-		for (int i = inicio; i < fin; i++) {
-			msg += " " + metas[i] + ",";
-		}
-
-		msg = msg.substring(0, msg.length() - 1) + ".\n";
-
-		String[] info = new String[3];
-		String m = "Practica: GP 1.1. Descripcion: Perform the specific practices of the process area to develop work products and provide services to achieve the specific goals of the process area.\n";
-		info[0] = m;
-
-		m = "Practica: GP 2.1. Descripción: Establish and maintain an organizational policy for planning and "
-				+ "performing the process.\r\n";
-		m += "Practica: GP 2.2. Descripcion: Establish and maintain the plan for performing the process.\n";
-
-		m += "Practica: GP 2.3. Descripción: Provide adequate resources for performing the process, "
-				+ "developing the work products, and providing the services of the " + "process.\n";
-		m += "Practica: GP 2.4. Descripcion: Assign responsibility and authority for performing the process, "
-				+ "developing the work products, and providing the services of the " + "process. \n";
-
-		m += "Practica: GP 2.5. Descripción: Train the people performing or supporting the process as needed. \n";
-		m += "Practica: GP 2.6. Descripcion: Place selected work products of the process under appropriate "
-				+ "levels of control.\n";
-
-		m += "Practica: GP 2.7. Descripción: Identify and involve the relevant stakeholders of the process as "
-				+ "planned. \n";
-		m += "Practica: GP 2.8. Descripcion: Monitor and control the process against the plan for performing "
-				+ "the process and take appropriate corrective action. \n";
-
-		m += "Practica: GP 2.9. Descripción: Objectively evaluate adherence of the process and selected work "
-				+ "products against the process description, standards, and "
-				+ "procedures, and address noncompliance.  \n";
-		
-		m += "Practica: GP 2.10. Descripción: Review the activities, status, and results of the process with higher" + 
-				"level management and resolve issues.\n";
-
-		info[1] = m;
-
-		m = "Practica: GP 3.1. Descripción: Establish and maintain the description of a defined process.\n";
-		m += "Practica: GP 3.2. Descripción: Collect process related experiences derived from planning and" + 
-				"performing the process to support the future use and improvement" + 
-				"of the organization’s processes and process assets.\n";
-		info[2] = m;
-		
-		for (int i = inicio; i < fin; i++) {
-			msg += " " + info[i];
-			if(i == 0) {
-				msg+= hash.get(area);
-			}
-		}
-		
-		txtTexto.setText(msg);
-	}
+    @FXML
+    private JFXCheckBox sg3;
 	
 	private void createHash() {
 		hash = new HashMap<>();
@@ -139,8 +79,8 @@ public class MainController implements Initializable {
 		hash.put("MA", m);
 		
 		m = "SP 1.1 Establish Organizational Process Needs\r\n" + 
-				"SP 1.2 Appraise the Organization’s Processes\r\n" + 
-				"SP 1.3 Identify the Organization’s Process Improvements\r\n" + 
+				"SP 1.2 Appraise the Organizationâ€™s Processes\r\n" + 
+				"SP 1.3 Identify the Organizationâ€™s Process Improvements\r\n" + 
 				"SP 2.1 Establish Process Action Plans\r\n" + 
 				"SP 2.2 Implement Process Action Plans\r\n" + 
 				"SP 3.1 Deploy Organizational Process Assets\r\n" + 
@@ -174,7 +114,7 @@ public class MainController implements Initializable {
 				"SP 2.1 Establish the Budget and Schedule\r\n" + 
 				"SP 2.2 Identify Project Risks\r\n" + 
 				"SP 2.3 Plan Data Management\r\n" + 
-				"SP 2.4 Plan the Project’s Resources\r\n" + 
+				"SP 2.4 Plan the Projectâ€™s Resources\r\n" + 
 				"SP 2.5 Plan Needed Knowledge and Skills\r\n" + 
 				"SP 2.6 Plan Stakeholder Involvement\r\n" + 
 				"SP 2.7 Establish the Project Plan\r\n" + 
@@ -183,7 +123,7 @@ public class MainController implements Initializable {
 				"SP 3.3 Obtain Plan Commitment \n";
 		hash.put("PP", m);
 		
-		m = "SP 1.1 Establish the Project’s Objectives\r\n" + 
+		m = "SP 1.1 Establish the Projectâ€™s Objectives\r\n" + 
 				"SP 1.2 Compose the Defined Process\r\n" + 
 				"SP 1.3 Select Subprocesses and Attributes\r\n" + 
 				"SP 1.4 Select Measures and Analytic Techniques\r\n" + 
@@ -231,9 +171,9 @@ public class MainController implements Initializable {
 				"SP 2.3 Record Causal Analysis Data \n";
 		hash.put("CM", m);
 		
-		m = "SP 1.1 Establish the Project’s Defined Process\r\n" + 
+		m = "SP 1.1 Establish the Projectâ€™s Defined Process\r\n" + 
 				"SP 1.2 Use Organizational Process Assets for Planning Project Activities\r\n" + 
-				"SP 1.3 Establish the Project’s Work Environment\r\n" + 
+				"SP 1.3 Establish the Projectâ€™s Work Environment\r\n" + 
 				"SP 1.4 Integrate Plans\r\n" + 
 				"SP 1.5 Manage the Project Using Integrated Plans\r\n" + 
 				"SP 1.6 Establish Teams\r\n" + 
@@ -246,8 +186,8 @@ public class MainController implements Initializable {
 		m= "SP 1.1 Establish Standard Processes\r\n" + 
 				"SP 1.2 Establish Lifecycle Model Descriptions\r\n" + 
 				"SP 1.3 Establish Tailoring Criteria and Guidelines\r\n" + 
-				"SP 1.4 Establish the Organization’s Measurement Repository\r\n" + 
-				"SP 1.5 Establish the Organization’s Process Asset Library\r\n" + 
+				"SP 1.4 Establish the Organizationâ€™s Measurement Repository\r\n" + 
+				"SP 1.5 Establish the Organizationâ€™s Process Asset Library\r\n" + 
 				"SP 1.6 Establish Work Environment Standards\r\n" + 
 				"SP 1.7 Establish Rules and Guidelines for Teams \n";
 		hash.put("OPD", m);
@@ -325,21 +265,19 @@ public class MainController implements Initializable {
 
 	}
 
+	@FXML
+    void process(ActionEvent event) {
+
+    }
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		createHash();
-		ObservableList<Integer> listInt = FXCollections.observableArrayList(0, 1, 2, 3);
-		comboAct.setItems(listInt);
-		comboAct.getSelectionModel().select(0);
-
-		comboObj.setItems(listInt);
-		comboObj.getSelectionModel().select(0);
 
 		ObservableList<String> list = FXCollections.observableArrayList(areas);
 		comboArea.setItems(list);
 		comboArea.getSelectionModel().select(0);
 
-		txtTexto.setWrapText(true);
 	}
 
 }
