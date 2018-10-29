@@ -75,27 +75,10 @@ public class MainController implements Initializable {
 		areas.add(new Area("PMC", "Project Monitoring and Control",2,2));
 		areas.add(new Area("PPQA", "Process and Product Quality Assurance",2,2));
 		areas.add(new Area("RD", "Requirements Development",3,3));
+		areas.add(new Area("RSKM", "Risk Management",3,3));
+		areas.add(new Area("TS", "Technical Solution",3,3));
 		
 		
-		
-		m = "SP 1.1 Determine Risk Sources and Categories\r\n" + 
-				"SP 1.2 Define Risk Parameters\r\n" + 
-				"SP 1.3 Establish a Risk Management Strategy\r\n" +  
-				"SP 2.1 Identify Risks\r\n" + 
-				"SP 2.2 Evaluate, Categorize, and Prioritize Risks\r\n" + 
-				"SP 3.1 Develop Risk Mitigation Plans\r\n" + 
-				"SP 3.2 Implement Risk Mitigation Plans \n";
-		hash.put("RSKM", m);
-		
-		m = "SP 1.1 Develop Alternative Solutions and Selection Criteria\r\n" + 
-				"SP 1.2 Select Product Component Solutions\r\n" + 
-				"SP 2.1 Design the Product or Product Component\r\n" + 
-				"SP 2.2 Establish a Technical Data Package\r\n" + 
-				"SP 2.3 Design Interfaces Using Criteria\r\n" + 
-				"SP 2.4 Perform Make, Buy, or Reuse Analyses\r\n" + 
-				"SP 3.1 Implement the Design\r\n" + 
-				"SP 3.2 Develop Product Support Documentation \n";
-		hash.put("TS", m);
 
 	}
 
