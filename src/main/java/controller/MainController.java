@@ -124,8 +124,7 @@ public class MainController implements Initializable {
 	
 	@FXML
     void changeArea(ActionEvent event) {
-		Area a = comboArea.getSelectionModel().getSelectedItem();
-		txtArea.setText(a.getNombre());
+		
 		updateUI();
     }
 	
@@ -142,6 +141,7 @@ public class MainController implements Initializable {
 
 	private void updateUI() {
 		Area a = comboArea.getSelectionModel().getSelectedItem();
+		txtArea.setText(a.getNombre()+" - Madurez: "+a.getMadurez());
 		gg1.setSelected(a.getCapacidad()>=1);
 		gg2.setSelected(a.isG2());
 		gg3.setSelected(a.isG3());
