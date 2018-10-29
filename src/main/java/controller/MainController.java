@@ -99,16 +99,17 @@ public class MainController implements Initializable {
 				break;
 			}
 		}
-		
+		boolean termino = true;
 		for (int i = 0; i < areas.size(); i++) {
 			if(areas.get(i).getMadurez() > (madurez+1)) {
 				madurez++;
-				break;
 			}
 			if (areas.get(i).getCapacidad() < 3) {
+				termino = false;
 				break;
 			}
 		}
+		madurez = termino? 5 : madurez;
 		Alert warning = new Alert(AlertType.INFORMATION);
 		warning.setTitle("Nivel de Madurez");
 		warning.setHeaderText(null);
@@ -146,7 +147,7 @@ public class MainController implements Initializable {
 
 	private void updateUI() {
 		Area a = comboArea.getSelectionModel().getSelectedItem();
-		txtArea.setText(a.getNombre()+" - Madurez: "+a.getMadurez());
+		txtArea.setText(a.getNombre()+" - Madurez: "+a.getMadurez()+ " - Capacidad actual: "+a.getCapacidad());
 		gg1.setSelected(a.getCapacidad()>=1);
 		gg2.setSelected(a.isG2());
 		gg3.setSelected(a.isG3());
