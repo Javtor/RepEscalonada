@@ -156,7 +156,7 @@ public class MainController implements Initializable {
 		
 		int sg =a.getSg();
 		sg2.setDisable(sg == 1);
-		sg3.setDisable(sg >= 1);
+		sg3.setDisable(sg <= 2);
 	}
 
 }
