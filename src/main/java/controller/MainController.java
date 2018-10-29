@@ -56,7 +56,7 @@ public class MainController implements Initializable {
 	@FXML
 	private JFXCheckBox sg3;
 
-	private void createHash() {
+	private void createAreas() {
 
 		areas = new ArrayList<Area>();
 		areas.add(new Area("CAR","Causal Analysis and Resolution",5,2));
@@ -79,13 +79,13 @@ public class MainController implements Initializable {
 		areas.add(new Area("PMC", "Project Monitoring and Control",2,2));
 		areas.add(new Area("PPQA", "Process and Product Quality Assurance",2,2));
 		areas.add(new Area("RD", "Requirements Development",3,3));
-		
-
+		areas.add(new Area("RSKM", "Risk Management",3,3));
+		areas.add(new Area("TS", "Technical Solution",3,3));
+		Collections.sort(areas);
 	}
 
 	@FXML
 	void process(ActionEvent event) {
-		Collections.sort(areas);
 		int madurez = 1;
 
 		for (int i = 0; i < areas.size(); i++) {
@@ -113,11 +113,12 @@ public class MainController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		createHash();
+		createAreas();
 
 		ObservableList<Area> list = FXCollections.observableArrayList(areas);
 		comboArea.setItems(list);
 		comboArea.getSelectionModel().select(0);
+		updateUI();
 
 	}
 	

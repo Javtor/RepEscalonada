@@ -30,7 +30,9 @@ public class Area implements Comparable<Area>{
 	}
 	@Override
 	public int compareTo(Area a) {
-		return madurez-a.madurez;
+		if(madurez != a.madurez)
+			return madurez-a.madurez;
+		return abre.compareTo(a.abre);
 	}
 	
 	@Override
