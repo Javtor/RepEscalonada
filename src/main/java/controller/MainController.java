@@ -153,6 +153,10 @@ public class MainController implements Initializable {
 		sg1.setSelected(a.isS1());
 		sg2.setSelected(a.isS2());
 		sg3.setSelected(a.isS3());
+		
+		int sg =a.getSg();
+		sg2.setDisable(sg == 1);
+		sg3.setDisable(sg >= 1);
 	}
 
 }

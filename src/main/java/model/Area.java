@@ -89,6 +89,9 @@ public class Area implements Comparable<Area>{
 	public void setS3(boolean s3) {
 		this.s3 = s3;
 	}
+	public int getSg() {
+		return sg;
+	}
 	
 	
 }
