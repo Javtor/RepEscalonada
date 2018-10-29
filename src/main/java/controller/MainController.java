@@ -17,7 +17,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import model.Area;
 
 public class MainController implements Initializable {
@@ -107,8 +109,11 @@ public class MainController implements Initializable {
 				break;
 			}
 		}
-		
-		System.out.println("El nivel de madurez de la organización es de "+madurez);
+		Alert warning = new Alert(AlertType.INFORMATION);
+		warning.setTitle("Nivel de Madurez");
+		warning.setHeaderText(null);
+		warning.setContentText("El nivel de madurez de la organización es de "+madurez);
+		warning.showAndWait();
 	}
 
 	@Override
