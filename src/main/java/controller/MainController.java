@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -16,19 +17,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import model.Area;
 
 public class MainController implements Initializable {
 
-	public static final String[] areas = new String[] { "CAR", "CM", "DAR", "IPM", "MA", "OPD", "OPF", "OPM", "OPP",
-			"OT", "PI", "PMC", "PP", "PPQA", "QPM", "RD", "REQM", "RSKM", "SAM", "TS", "VAL", "VER" };
+//	public static final String[] areas = new String[] { "CAR", "CM", "DAR", "IPM", "MA", "OPD", "OPF", "OPM", "OPP",
+//			"OT", "PI", "PMC", "PP", "PPQA", "QPM", "RD", "REQM", "RSKM", "SAM", "TS", "VAL", "VER" };
 
-	private HashMap<String, String> hash;
+	private ArrayList<Area> areas;
 	
 	@FXML
     private JFXButton btnProcess;
 
     @FXML
-    private JFXComboBox<String> comboArea;
+    private JFXComboBox<Area> comboArea;
 
     @FXML
     private Label txtArea;
@@ -274,7 +276,7 @@ public class MainController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		createHash();
 
-		ObservableList<String> list = FXCollections.observableArrayList(areas);
+		ObservableList<Area> list = FXCollections.observableArrayList(areas);
 		comboArea.setItems(list);
 		comboArea.getSelectionModel().select(0);
 
